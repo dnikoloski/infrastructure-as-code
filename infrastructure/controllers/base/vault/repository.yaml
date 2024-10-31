@@ -1,8 +1,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: hashicorp
+  name: vault
   namespace: vault
 spec:
   interval: 24h
-  url: https://helm.releases.hashicorp.com
+  type: oci
+  url: oci://registry-1.docker.io/bitnamicharts/vault

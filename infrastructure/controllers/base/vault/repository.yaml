@@ -1,9 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: vault
+  name: bitnami
   namespace: vault
 spec:
   interval: 24h
-  type: oci
-  url: oci://registry-1.docker.io/bitnamicharts/vault
+  url: https://charts.bitnami.com/bitnami

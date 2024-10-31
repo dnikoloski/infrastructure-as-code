@@ -15,5 +15,6 @@ spec:
         namespace: vault
       interval: 12h
   values:
+    server.dev.enabled: true
     ui.enabled: true
   

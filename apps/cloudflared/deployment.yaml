@@ -4,6 +4,7 @@ metadata:
   labels:
     app: cloudflared
   name: cloudflared
+  namespace: cloudflared
 spec:
   selector:
     matchLabels:

@@ -7,21 +7,10 @@ The purpose of my homelab is to learn and to have fun. Being a DevOps Engineer b
 
 ## Cluster Provisioning
 
-I use [K3s (https://k3s.io/)] as Kubernetes distribution, because it's simple & secure!
-
-## Production
-
-* controlplane-1 Cloud VPS [**CPU**: 4 vCPU Cores **RAM**: 6 GB RAM **STORAGE**: 100 GB NVMe]
-* worker-1 Cloud VPS [**CPU**: 6 vCPU Cores **RAM**: 16 GB RAM **STORAGE**: 200 GB NVMe]
+I use [Talos Linux](https://www.talos.dev/) for Kubernetes, because it's secure, immutable, and minimal.
 
 
-## Current Goals
-
-* Set up Grafana and Prometheus
-* Alert notifcation to Telegram/Discord
-* Increase security
-
-# Mainfraime Configuration
+## Mainfraime Configuration
 
 ### Node Details
 
@@ -58,3 +47,9 @@ I use [K3s (https://k3s.io/)] as Kubernetes distribution, because it's simple & 
   - **CPU**: Cortex-A72 4 CPU Cores
   - **RAM**: 8 GB
   - **Storage**: 240 GB NVMe
+
+## Current Goals
+
+* Set up Grafana and Prometheus
+* Alert notifcation to Telegram/Discord
+* Increase security

@@ -1,20 +1,5 @@
 ---
 apiVersion: v1                                                                                
-kind: PersistentVolume                                                                    
-metadata:                                                                                     
-  name: uptime-storage  
-  namespace: uptime-kuma  
-spec:
-  storageClassName: local-path                                                                        
-  capacity:                                                                                   
-    storage: 1Gi     
-  accessModes:                                                                                
-    - ReadWriteOnce                                                                         
-  hostPath:                                                                                   
-    path: "/app/data" 
-
----
-apiVersion: v1                                                                                
 kind: PersistentVolumeClaim                                                                   
 metadata:                                                                                     
   name: uptime-storage-pvc

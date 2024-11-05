@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ww-gitops
+spec:
+  chart:
+    spec:
+      version: "4.0.36"
+  values:
+    adminUser:
+      create: true
+      passwordHash: $2a$12$/xzvyuZsUFacrXul.j14dOiAeZBECAO9m5.g1f9XsF1SUk4soH9DK 
+      username: admin
+    metrics:
+      enabled: true

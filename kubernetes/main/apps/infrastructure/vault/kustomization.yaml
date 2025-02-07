@@ -7,6 +7,9 @@ metadata:
 spec:
   path: ./kubernetes/main/apps/infrastructure/vault
   prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
   wait: true
   interval: 30m
   retryInterval: 1m

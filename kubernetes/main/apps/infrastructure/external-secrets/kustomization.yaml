@@ -1,6 +1,13 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-resources:
-  - ./repository.yaml
-  - ./release.yaml
-  - ./namespace.yaml
+metadata:
+  name: external-secrets
+  namespace: external-secrets
+spec:
+  path: ./kubernetes/main/apps/infrastructure/external-secrets
+  prune: true
+  wait: true
+  interval: 30m
+  retryInterval: 1m
+  timeout: 5m

@@ -14,3 +14,6 @@ spec:
         name: bitnami
         namespace: vault
       interval: 12h
+  values:
+    dataStorage:
+      size: 5Gi

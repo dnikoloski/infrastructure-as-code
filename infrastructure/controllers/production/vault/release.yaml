@@ -6,10 +6,3 @@ spec:
   chart:
     spec:
       version: "1.4.26"
-  values:
-    dataStorage:
-      enabled: true
-      size: 3Gi
-      mountPath: "/vault/data"
-      storageClass: retain-local-ath
-      accessMode: ReadWriteOnce

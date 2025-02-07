@@ -14,10 +14,3 @@ spec:
         name: bitnami
         namespace: vault
       interval: 12h
-  values:
-    dataStorage:
-      enabled: true
-      size: 3Gi
-      mountPath: "/vault/data"
-      storageClass: retain-local-ath
-      accessMode: ReadWriteOnce

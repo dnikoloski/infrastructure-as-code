@@ -2,10 +2,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: external-secrets
-  namespace: external-secrets
+  name: &app cloudnative-pg
+  namespace: flux-system
 spec:
-  path: ./kubernetes/main/apps/infrastructure/external-secrets
+  targetNamespace: cnpg-system
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  path: ./kubernetes/main/apps/infrastructure/cloudnative-pg/app
   prune: true
   sourceRef:
     kind: GitRepository

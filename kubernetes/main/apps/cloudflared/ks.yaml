@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/main/apps/home/cloudflared/app
+  path: ./kubernetes/main/apps/cloudflared/app
   prune: true
   sourceRef:
     kind: GitRepository

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: cloudflared
-  name: cloudflared
+  name: &app cloudflared
   namespace: cloudflared
 spec:
   selector:

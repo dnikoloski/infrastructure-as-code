@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: uptime-kuma
+  name: &app uptime-kuma
   namespace: uptime-kuma
   labels:
     app.kubernetes.io/name: uptime-kuma

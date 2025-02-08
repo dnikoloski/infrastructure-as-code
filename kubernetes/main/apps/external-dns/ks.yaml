@@ -2,14 +2,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app cloudflared
+  name: &app external-dns
   namespace: flux-system
 spec:
-  targetNamespace: cloudflared
+  targetNamespace: external-dns
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/main/apps/cloudflared/app
+  path: ./kubernetes/main/apps/external-dns/app
   prune: true
   sourceRef:
     kind: GitRepository

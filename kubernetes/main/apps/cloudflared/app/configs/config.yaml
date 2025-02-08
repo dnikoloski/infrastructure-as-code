@@ -1,0 +1,9 @@
+---
+originRequest:
+  originServerName: "external.dnsk.xyz"
+
+ingress:
+  - hostname: "dnsk.xyz"
+    service: https://ingress-nginx-external-controller.network.svc.cluster.local:443
+  - hostname: "*.dnsk.xyz"
+    service: https://ingress-nginx-external-controller.network.svc.cluster.local:443

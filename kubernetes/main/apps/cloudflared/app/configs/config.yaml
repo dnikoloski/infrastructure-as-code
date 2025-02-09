@@ -7,3 +7,4 @@ ingress:
     service: https://ingress-nginx-external-controller.ingress-nginx.svc.cluster.local:443
   - hostname: "*.dnsk.xyz"
     service: https://ingress-nginx-external-controller.ingress-nginx.svc.cluster.local:443
+  - service: http_status:404

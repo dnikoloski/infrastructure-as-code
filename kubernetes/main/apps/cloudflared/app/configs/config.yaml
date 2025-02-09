@@ -1,9 +1,9 @@
 ---
 originRequest:
-  originServerName: "external.dnsk.xyz"
+  noTLSVerify: true
 
 ingress:
   - hostname: "dnsk.xyz"
-    service: https://ingress-nginx-external-controller.network.svc.cluster.local:443
+    service: https://ingress-nginx-external-controller.ingress-nginx.svc.cluster.local:443
   - hostname: "*.dnsk.xyz"
-    service: https://ingress-nginx-external-controller.network.svc.cluster.local:443
+    service: https://ingress-nginx-external-controller.ingress-nginx.svc.cluster.local:443

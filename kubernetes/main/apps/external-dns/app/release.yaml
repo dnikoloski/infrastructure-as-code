@@ -38,12 +38,12 @@ spec:
       - --cloudflare-proxied
       - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
       - --crd-source-kind=DNSEndpoint
+      - --cloudflare-dns-records-per-page=5000
+      - --default-targets=${SECRET_CLOUDFLARE_TUNNEL_ID}.cfargotunnel.com
     policy: sync
     sources: ["crd", "ingress"]
-    txtPrefix: k8s.
-    txtOwnerId: default
+    # txtPrefix: k8s.
+    # txtOwnerId: default
     domainFilters: ["dnsk.xyz"]
-    serviceMonitor:
-      enabled: true
     # podAnnotations:
     #   secret.reloader.stakater.com/reload: external-dns-secret

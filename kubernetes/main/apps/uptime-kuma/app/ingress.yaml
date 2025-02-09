@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uptime-kuma-ingress
+  namespace: uptime-kuma
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "status.dnsk.xyz"
+spec:
+  ingressClassName: external
+  rules:
+    - host: "status.dnsk.xyz"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: uptime-kuma
+                port:
+                  number: 3001

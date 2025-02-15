@@ -14,39 +14,30 @@ I use [Talos Linux](https://www.talos.dev/) for Kubernetes, because it's secure,
 
 ### Node Details
 
-- **Node Name**: `controlplane-1`
-- **Model**:  Asus 
+- **Node Name**: `control-plane-1`
+- **Model**:  RasberryPi 4 B
 - **Specifications**:
-  - **CPU**: i7–5500U 4 CPU Cores
+  - **CPU**: Cortex-A72 4 CPU Cores
   - **RAM**: 8 GB
-  - **Storage**: 240 GB NVMe, 1 TB HDD
+  - **Storage**: 240 GB NVMe
+
+---
+
+- **Node Name**: `worker-1`
+- **Model**:  RasberryPi 4 B
+- **Specifications**:
+  - **CPU**: Cortex-A72 4 CPU Cores
+  - **RAM**: 8 GB
+  - **Storage**: 240 GB NVMe
 
 ----
 
-- **Node Name**: `worker-1`
+- **Node Name**: `worker-2`
 - **Model**:  EliteDesk 800 G4 Desktop Mini
 - **Specifications**:
   - **CPU**: i5-4800 6 CPU Cores
   - **RAM**: 32 GB
   - **Storage**: 500 GB NVMe
-
----
-
-- **Node Name**: `worker-2`
-- **Model**:  RasberryPi 4 B
-- **Specifications**:
-  - **CPU**: Cortex-A72 4 CPU Cores
-  - **RAM**: 8 GB
-  - **Storage**: 240 GB NVMe
-
----
-
-- **Node Name**: `worker-3`
-- **Model**:  RasberryPi 4 B
-- **Specifications**:
-  - **CPU**: Cortex-A72 4 CPU Cores
-  - **RAM**: 8 GB
-  - **Storage**: 240 GB NVMe
 
 ## Current Goals
 

@@ -40,3 +40,5 @@ spec:
     policy: sync
     sources: ["crd", "ingress"]
     domainFilters: ["dnsk.xyz"]
+    serviceMonitor:
+      enabled: true

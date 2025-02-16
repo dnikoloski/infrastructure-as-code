@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami-ingress
+  namespace: whoami
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "whoami.dnsk.xyz"
+spec:
+  ingressClassName: external
+  rules:
+    - host: "whoami.dnsk.xyz"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  number: 80

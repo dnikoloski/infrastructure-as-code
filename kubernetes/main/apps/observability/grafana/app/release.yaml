@@ -162,8 +162,8 @@ spec:
       enabled: true
       ingressClassName: external
       annotations:
-        external-dns.alpha.kubernetes.io/target: "grafana.dnsk.xyz"
+        external-dns.alpha.kubernetes.io/target: "metrics.dnsk.xyz"
       path: /
       pathType: Prefix
       hosts:
-        - grafana.dnsk.xyz
+        - metrics.dnsk.xyz

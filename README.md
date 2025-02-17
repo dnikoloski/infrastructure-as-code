@@ -50,7 +50,7 @@ I use [Talos Linux](https://www.talos.dev/) for Kubernetes, because it's secure,
 - **Node Name**: `worker-2`
 - **Model**:  EliteDesk 800 G4 Desktop Mini
 - **Specifications**:
-  - **CPU**: i5-4800 6 CPU Cores
+  - **CPU**: i5-8500 6 CPU Cores
   - **RAM**: 32 GB
   - **Storage**: 500 GB NVMe
 

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: glance
-  name: &app glance
+  name: glance
   namespace: glance
 spec:
   selector:
@@ -27,14 +27,15 @@ spec:
           ports:
             - name: web
               containerPort: 8080
-        - mountPath: /app/config
-          name: config
-          readOnly: true
-          subPath: config.yaml
+          volumeMounts:
+            - mountPath: /app/config
+              name: config
+              readOnly: true
+              subPath: config.yaml
       restartPolicy: Always
       terminationGracePeriodSeconds: 60
       volumes:
-      - configMap:
-          defaultMode: 420
-          name: glance-configmap                                                                                                                                                                                                                       
-        name: config
+        - configMap:
+            defaultMode: 420
+            name: glance-configmap
+          name: config

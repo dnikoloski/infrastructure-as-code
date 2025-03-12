@@ -1,4 +1,10 @@
-# Homelab Infrastructure
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/prehor/home-ops/main/docs/assets/images/home-ops-kubernetes-logo.png" align="center" width="144px" height="144px"/>
+
+### # Homelab Infrastructure :octocat:
+
+</div>
 
 This repo contains all of the configuration and documentation of my homelab.
 

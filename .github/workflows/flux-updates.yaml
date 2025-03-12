@@ -23,7 +23,7 @@ jobs:
           flux install \
             --export \
             --components-extra=image-reflector-controller,image-automation-controller \
-            > ./clusters/production/flux-system/gotk-components.yaml
+            > ./kubernetes/main/flux-system/config/gotk-components.yaml
 
           VERSION="$(flux -v)"
           echo "flux_version=$VERSION" >> $GITHUB_OUTPUT

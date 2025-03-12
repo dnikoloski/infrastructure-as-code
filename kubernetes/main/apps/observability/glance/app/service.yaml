@@ -1,0 +1,18 @@
+---
+# Source: glance/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: glance
+  name: &app glance
+  namespace: glance
+spec:
+  type: ClusterIP
+  ports:
+    - name: web
+      port: 8080
+      targetPort: web
+  selector:
+    matchLabels:
+      app: glance

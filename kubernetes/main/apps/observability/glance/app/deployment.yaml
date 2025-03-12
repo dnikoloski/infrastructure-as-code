@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: glance
+  name: &app glance
+  namespace: glance
+spec:
+  selector:
+    matchLabels:
+      app: glance
+  template:
+    metadata:
+      labels:
+        app: glance
+    spec:
+      containers:
+        - name: glance
+          image: glanceapp/glance
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 100m
+            requests:
+              cpu: 10m
+          ports:
+            - name: web
+              containerPort: 8080
+        - mountPath: /app/config
+          name: config
+          readOnly: true
+          subPath: config.yaml
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: glance-configmap                                                                                                                                                                                                                       
+        name: config

@@ -1,11 +1,13 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: &app glance
+  namespace: glan
   labels:
     app: glance
-  name: glance
-  namespace: glance
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: glance
@@ -16,7 +18,10 @@ spec:
     spec:
       containers:
         - name: glance
-          image: glanceapp/glance:latest
+          image: docker.io/glanceapp/glance:latest
+          ports:
+            - name: web
+              containerPort: 8080
           imagePullPolicy: Always
           resources:
             limits:
@@ -24,9 +29,6 @@ spec:
               cpu: 100m
             requests:
               cpu: 10m
-          ports:
-            - name: web
-              containerPort: 8080
           volumeMounts:
             - mountPath: /app/config
               name: config
@@ -39,3 +41,4 @@ spec:
             defaultMode: 420
             name: glance-configmap
           name: config
+

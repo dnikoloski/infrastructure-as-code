@@ -9,6 +9,6 @@ configMapGenerator:
   - name: glance-configmap
     namespace: glance
     files:
-      - ./configs/glance.yaml
+      - ./configs/glance.yml
 generatorOptions:
   disableNameSuffixHash: true

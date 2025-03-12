@@ -30,10 +30,10 @@ spec:
             requests:
               cpu: 10m
           volumeMounts:
-            - mountPath: /app/config/glance.yaml
+            - mountPath: /app/config/glance.yml
               name: config
               readOnly: true
-              subPath: glance.yaml
+              subPath: glance.yml
       restartPolicy: Always
       terminationGracePeriodSeconds: 60
       volumes:

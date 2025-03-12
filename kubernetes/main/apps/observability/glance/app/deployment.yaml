@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: glance
-          image: glanceapp/glance
+          image: glanceapp/glance:latest
           imagePullPolicy: Always
           resources:
             limits:

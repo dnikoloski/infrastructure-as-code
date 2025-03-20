@@ -94,7 +94,32 @@ spec:
                   target_api_version: [spec, targetRef, apiVersion]
                   target_kind: [spec, targetRef, kind]
                   target_name: [spec, targetRef, name]
+                
                 metrics:
+                  - name: "vpa_containerrecommendations_target"
+                    help: "VPA container recommendations for memory."
+                    each:
+                      type: Gauge
+                      gauge:
+                        path: [status, recommendation, containerRecommendations]
+                        valueFrom: [target, memory]
+                        labelsFromPath:
+                          container: [containerName]
+                    commonLabels:
+                      resource: "memory"
+                      unit: "byte"
+                  - name: "vpa_containerrecommendations_target"
+                    help: "VPA container recommendations for cpu."
+                    each:
+                      type: Gauge
+                      gauge:
+                        path: [status, recommendation, containerRecommendations]
+                        valueFrom: [target, cpu]
+                        labelsFromPath:
+                          container: [containerName]
+                    commonLabels:
+                      resource: "cpu"
+                      unit: "core"
                   # Labels
                   - name: "verticalpodautoscaler_labels"
                     help: "VPA container recommendations. Kubernetes labels converted to Prometheus labels"
@@ -201,3 +226,5 @@ spec:
                     commonLabels:
                       resource: "cpu"
                       unit: "core"
+    selfMonitor:
+      enabled: true

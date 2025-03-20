@@ -23,6 +23,13 @@ spec:
       service:
         selector:
           k8s-app: kube-scheduler
+    kubeStateMetrics:
+      service:
+        selector:
+          k8s-app: kube-state-metrics
+
+    verticalPodAutoscaler:
+      enabled: true
 
     alertmanager:
       enabled: false

@@ -1,0 +1,18 @@
+authentik:
+  secret_key: "yHi/NTMhSQb4x8tWIPj4vQVLZX37NG3TgzrR4OohD0KNjT49v9sH/iexbRm75iJxgBvcfMjoXYmZsXAH"
+  postgresql:
+    password: "trytohackme"
+server:
+  ingress:
+    enabled: true
+    annotations:
+      external-dns.alpha.kubernetes.io/target: "auth.dnsk.xyz"
+    ingressClassName: external
+    hosts:
+      - "auth.dnsk.xyz"
+postgresql:
+  enabled: true
+  auth:
+    password: "trytohackme"
+redis:
+  enabled: true

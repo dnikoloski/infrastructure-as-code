@@ -1,7 +1,7 @@
 authentik:
   secret_key: "${AUTHENTIK_KEY}"
   postgresql:
-    password: "trytohackme"
+    password: "${AUTHENTIK_POSTGRES_PASSWORD}"
 server:
   ingress:
     enabled: true
@@ -13,6 +13,6 @@ server:
 postgresql:
   enabled: true
   auth:
-    password: "trytohackme"
+    password: "${AUTHENTIK_POSTGRES_PASSWORD}"
 redis:
   enabled: true

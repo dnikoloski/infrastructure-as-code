@@ -1,5 +1,5 @@
 authentik:
-  secret_key: "yHi/NTMhSQb4x8tWIPj4vQVLZX37NG3TgzrR4OohD0KNjT49v9sH/iexbRm75iJxgBvcfMjoXYmZsXAH"
+  secret_key: "${AUTHENTIK_KEY}"
   postgresql:
     password: "trytohackme"
 server:

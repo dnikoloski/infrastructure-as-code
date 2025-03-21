@@ -35,23 +35,23 @@ pages:
               sites:
                 - title: Authentik
                   url: https://auth.dnsk.xyz
-                  check-url: https://auth.dnsk.xyz/
+                  check-url: http://authentik-server.authentik.svc.cluster.local:80
                   icon: di:authentik
                 - title: Pihole
                   url: http://10.0.10.200/admin/login.php
-                  check-url: http://10.0.10.200/
+                  check-url: http://pihole-web.pihole-system.svc.cluster.local:80
                   icon: di:pi-hole
                 - title: Glance
                   url: https://home.dnsk.xyz
-                  check-url: https://home.dnsk.xyz/
+                  check-url: http://glance.glance.svc.cluster.local:8080
                   icon: di:glance
                 - title: Uptime Kuma
                   url: https://status.dnsk.xyz
-                  check-url: https://status.dnsk.xyz/
+                  check-url: http://uptime-kuma.uptime-kuma.svc.cluster.local:3001
                   icon: di:uptime-kuma
                 - title: Grafana
                   url: https://metrics.dnsk.xyz
-                  check-url: https://metrics.dnsk.xyz/
+                  check-url: http://grafana.observability.svc.cluster.local:80
                   icon: di:grafana
             - type: videos
               channels:

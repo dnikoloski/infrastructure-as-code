@@ -1,4 +1,30 @@
 pages:
+  - name: Homelab
+    width: slim
+    hide-desktop-navigation: false
+    center-vertically: true
+    columns:
+      - size: full
+        widgets:
+          - type: search
+            autofocus: true
+            search-engine: google
+            new-tab: true
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: "https://www.youtube.com/results?search_query={QUERY}"
+
+          - type: monitor
+            title: Services
+            sites:
+              - title: Authentik
+                url: https://auth.dnsk.xyz
+                icon: di:authentik
+              - title: Pihole
+                url: http://10.0.10.200/admin/login.php
+                icon: di:pihole
+
   - name: Home
     # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
     # hide-desktop-navigation: true
@@ -92,17 +118,3 @@ pages:
               - immich-app/immich
               - syncthing/syncthing
 
-  # Add more pages here:
-  # - name: Your page name
-  #   columns:
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: full
-  #       widgets:
-  #         # Add widgets here
-
-  #     - size: small
-  #       widgets:
-  #         # Add widgets here

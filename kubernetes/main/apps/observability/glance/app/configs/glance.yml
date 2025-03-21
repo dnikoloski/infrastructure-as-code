@@ -1,33 +1,35 @@
 pages:
-    - name: Homelab
-      width: slim
-      hide-desktop-navigation: false
-      center-vertically: true
+    - name: Home
+      # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+      # hide-desktop-navigation: true
       columns:
         - size: small
           widgets:
-            - type: dns-stats
-              service: pihole
-              url: http://10.0.10.200
-              token: ${PIHOLE_API_KEY}
+            - type: calendar
+              first-day-of-week: monday
+            - type: rss
+              limit: 10
+              collapse-after: 3
+              cache: 12h
+              feeds:
+                - url: https://selfh.st/rss/
+                  title: selfh.st
+                  limit: 2
+                - url: https://archlinux.org/feeds/news/
+                  title: Arch Linux
+                  limit: 4
 
-            - type: repository
-              repository: dnikoloski/infrastructure-as-code
-              pull-requests-limit: 5
-              issues-limit: 3
-              commits-limit: 3
+            # - type: twitch-channels
+            #   channels:
+            #     - theprimeagen
+            #     - j_blow
+            #     - piratesoftware
+            #     - cohhcarnage
+            #     - christitustech
+            #     - EJ_SA
 
         - size: full
           widgets:
-            - type: search
-              autofocus: true
-              search-engine: google
-              new-tab: true
-              bangs:
-                - title: YouTube
-                  shortcut: '!yt'
-                  url: https://www.youtube.com/results?search_query={QUERY}
-
             - type: monitor
               title: Services
               sites:
@@ -44,55 +46,16 @@ pages:
                   url: https://status.dnsk.xyz
                   icon: di:uptime-kuma
                 - title: Grafana
-                  url: https://grafana.dnsk.xyz
+                  url: https://metrics.dnsk.xyz
                   icon: di:grafana
-
-    - name: Home
-      # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
-      # hide-desktop-navigation: true
-      columns:
-        - size: small
-          widgets:
-            - type: calendar
-              first-day-of-week: monday
-            - type: rss
-              limit: 10
-              collapse-after: 3
-              cache: 12h
-              feeds:
-                - url: https://selfh.st/rss/
-                  title: selfh.st
-                  limit: 4
-                - url: https://ciechanow.ski/atom.xml
-                - url: https://www.joshwcomeau.com/rss.xml
-                  title: Josh Comeau
-                - url: https://samwho.dev/rss.xml
-                - url: https://ishadeed.com/feed.xml
-                  title: Ahmad Shadeed
-            - type: twitch-channels
-              channels:
-                - theprimeagen
-                - j_blow
-                - piratesoftware
-                - cohhcarnage
-                - christitustech
-                - EJ_SA
-        - size: full
-          widgets:
-            - type: group
-              widgets:
-                - type: hacker-news
-                - type: lobsters
             - type: videos
               channels:
                 # Linus Tech Tips
                 - UCXuqSBlHAE6Xw-yeJA0Tunw
-                # Jeff Geerling
-                - UCR-DXc1voovS8nhAvccRZhg
-                # Fireship
-                - UCsBjURrPoezykLs9EqgamOA
-                # Marques Brownlee
-                - UCBJycsmduvYEL83R_U4JriQ
+                # Mental Outlaw
+                - UC7YOGHUfC1Tb6E4pudI9STA
+                # Formula 1
+                - UCB_qr75-ydFVKSF9Dmo6izg
                 # Veritasium
                 - UCHnyfMqiRRG1u-2MsSQLbXA
             - type: group
@@ -106,13 +69,17 @@ pages:
         - size: small
           widgets:
             - type: weather
-              location: London, United Kingdom
+              location: ${WEATHER_LOCATION}
               # alternatively "imperial"
               units: metric
               # alternatively "24h"
               hour-format: 12h
               # Optionally hide the location from being displayed in the widget
               # hide-location: true
+            - type: dns-stats
+              service: pihole
+              url: http://10.0.10.200
+              token: ${PIHOLE_API_KEY}
             - type: markets
               # The link to go to when clicking on the symbol in the UI,
               # {SYMBOL} will be substituded with the symbol for each market
@@ -120,21 +87,19 @@ pages:
               markets:
                 - symbol: SPY
                   name: S&P 500
-                - symbol: BTC-USD
-                  name: Bitcoin
-                - symbol: NVDA
-                  name: NVIDIA
-                - symbol: AAPL
-                  name: Apple
-                - symbol: MSFT
-                  name: Microsoft
-            - type: releases
-              cache: 1d
-              # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-              # read-only token from your Github account settings and use it here to increase the limit.
-              # token: ...
-              repositories:
-                - glanceapp/glance
-                - go-gitea/gitea
-                - immich-app/immich
-                - syncthing/syncthing
+            - type: repository
+              repository: dnikoloski/infrastructure-as-code
+              pull-requests-limit: 5
+              issues-limit: 3
+              commits-limit: 3
+
+            # - type: releases
+            #   cache: 1d
+            #   # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            #   # read-only token from your Github account settings and use it here to increase the limit.
+            #   # token: ...
+            #   repositories:
+            #     - glanceapp/glance
+            #     - go-gitea/gitea
+            #     - immich-app/immich
+            #     - syncthing/syncthing

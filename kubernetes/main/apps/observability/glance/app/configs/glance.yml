@@ -12,11 +12,11 @@ pages:
               collapse-after: 3
               cache: 12h
               feeds:
-                - url: https://selfh.st/rss/
-                  title: selfh.st
-                  limit: 2
                 - url: https://archlinux.org/feeds/news/
                   title: Arch Linux
+                  limit: 4
+                - url: https://selfh.st/rss/
+                  title: selfh.st
                   limit: 4
 
             # - type: twitch-channels
@@ -35,18 +35,23 @@ pages:
               sites:
                 - title: Authentik
                   url: https://auth.dnsk.xyz
+                  check-url: https://auth.dnsk.xyz/
                   icon: di:authentik
                 - title: Pihole
                   url: http://10.0.10.200/admin/login.php
+                  check-url: http://10.0.10.200/
                   icon: di:pi-hole
                 - title: Glance
                   url: https://home.dnsk.xyz
+                  check-url: https://home.dnsk.xyz/
                   icon: di:glance
                 - title: Uptime Kuma
                   url: https://status.dnsk.xyz
+                  check-url: https://status.dnsk.xyz/
                   icon: di:uptime-kuma
                 - title: Grafana
                   url: https://metrics.dnsk.xyz
+                  check-url: https://metrics.dnsk.xyz/
                   icon: di:grafana
             - type: videos
               channels:
@@ -92,14 +97,11 @@ pages:
               pull-requests-limit: 5
               issues-limit: 3
               commits-limit: 3
-
-            # - type: releases
-            #   cache: 1d
-            #   # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-            #   # read-only token from your Github account settings and use it here to increase the limit.
-            #   # token: ...
-            #   repositories:
-            #     - glanceapp/glance
-            #     - go-gitea/gitea
-            #     - immich-app/immich
-            #     - syncthing/syncthing
+            - type: releases
+              cache: 1d
+              # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+              # read-only token from your Github account settings and use it here to increase the limit.
+              # token: ...
+              repositories:
+                - glanceapp/glance
+                - siderolabs/talos

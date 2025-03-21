@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: &app glance
-  namespace: glan
+  namespace: glance
   labels:
     app: glance
 spec:

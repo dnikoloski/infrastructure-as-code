@@ -1,11 +1,8 @@
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: whoami-ingress
-  namespace: whoami
   annotations:
-    external-dns.alpha.kubernetes.io/target: "whoami.dnsk.xyz"
+    external-dns.alpha.kubernetes.io/target: home.dnsk.xyz
     nginx.ingress.kubernetes.io/auth-url: |-
        http://ak-outpost-authentik-embedded-outpost.authentik.svc.cluster.local:9000/outpost.goauthentik.io/auth/nginx
     nginx.ingress.kubernetes.io/auth-signin: |-
@@ -17,13 +14,13 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-    - host: "whoami.dnsk.xyz"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: whoami
-                port:
-                  number: 80
+  - host: home.dnsk.xyz
+    http:
+      paths:
+      - backend:
+          service:
+            name: glance
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix

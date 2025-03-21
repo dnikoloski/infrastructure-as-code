@@ -11,6 +11,12 @@ creation_rules:
       - age:
           - age13swsp40tstrqluer6arm5skldvg5ucw4t390a87qcdzcj0r2jscqrraxnv
 
+  - path_regex: .*/glance\.(yaml|yml)
+    encrypted_regex: ".*" # Encrypt everything
+    key_groups:
+      - age:
+          - age13swsp40tstrqluer6arm5skldvg5ucw4t390a87qcdzcj0r2jscqrraxnv
+
 stores:
   yaml:
     indent: 2

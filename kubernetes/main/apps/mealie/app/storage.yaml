@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mealie
-  namespace: uptime-kuma
+  namespace: mealie
 spec:
   reclaimPolicy: Retain
   accessModes:

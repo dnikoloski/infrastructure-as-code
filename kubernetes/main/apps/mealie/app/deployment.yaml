@@ -25,9 +25,6 @@ spec:
               value: "false"
             - name: BASE_URL
               value: "https://recept.dnsk.xyz"
-          envFrom:
-            - secretRef:
-                name: mealie-ldap
           image: ghcr.io/mealie-recipes/mealie:v2.8.0
           ports:
             - containerPort: 9000

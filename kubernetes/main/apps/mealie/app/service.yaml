@@ -4,6 +4,7 @@ metadata:
   labels:
     app: mealie
   name: mealie
+  namespace: uptime-kuma
 spec:
   ports:
   - name: http

@@ -4,6 +4,7 @@ metadata:
   labels:
     app: mealie
   name: mealie-deployment
+  namespace: uptime-kuma
 spec:
   replicas: 1
   selector:

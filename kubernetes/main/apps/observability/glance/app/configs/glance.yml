@@ -39,7 +39,7 @@ pages:
                   icon: di:authentik
                 - title: Pihole
                   url: http://10.0.10.200/admin/login.php
-                  check-url: http://pihole-web.pihole-system.svc.cluster.local:80
+                  check-url: http://pihole-web.pihole-system.svc.cluster.local:80/admin/login.php
                   icon: di:pi-hole
                 - title: Glance
                   url: https://home.dnsk.xyz
@@ -55,7 +55,7 @@ pages:
                   icon: di:grafana
                 - title: Mealie
                   url: https://recept.dnsk.xyz
-                  check-url: https://recept.dnsk.xyz
+                  check-url: http://mealie.mealie.svc.cluster.local:80
                   icon: di:mealie
             - type: videos
               channels:

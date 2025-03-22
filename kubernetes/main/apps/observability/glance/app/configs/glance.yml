@@ -53,6 +53,10 @@ pages:
                   url: https://metrics.dnsk.xyz
                   check-url: http://grafana.observability.svc.cluster.local:80
                   icon: di:grafana
+                - title: Mealie
+                  url: https://recept.dnsk.xyz
+                  check-url: http://mealie.mealie.svc.cluster.local:9000
+                  icon: di:mealie
             - type: videos
               channels:
                 # Linus Tech Tips

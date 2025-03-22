@@ -26,4 +26,4 @@ spec:
               service:
                 name: mealie
                 port:
-                  number: 80
+                  number: 9000

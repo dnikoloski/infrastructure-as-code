@@ -55,7 +55,7 @@ pages:
                   icon: di:grafana
                 - title: Mealie
                   url: https://recept.dnsk.xyz
-                  check-url: http://mealie.mealie.svc.cluster.local:9000
+                  check-url: https://recept.dnsk.xyz
                   icon: di:mealie
             - type: videos
               channels:

@@ -6,6 +6,8 @@ metadata:
   namespace: glance
   labels:
     app: glance
+  annotations:
+    configmap.reloader.stakater.com/reload: "glance-configmap"
 spec:
   replicas: 1
   selector:

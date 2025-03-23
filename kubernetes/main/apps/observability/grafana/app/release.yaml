@@ -162,8 +162,8 @@ spec:
       enabled: true
       ingressClassName: external
       annotations:
-        external-dns.alpha.kubernetes.io/target: "metrics.dnsk.xyz"
+        external-dns.alpha.kubernetes.io/target: "metrics.${SECRET_EXTERNAL_DOMAIN}"
       path: /
       pathType: Prefix
       hosts:
-        - metrics.dnsk.xyz
+        - metrics.${SECRET_EXTERNAL_DOMAIN}

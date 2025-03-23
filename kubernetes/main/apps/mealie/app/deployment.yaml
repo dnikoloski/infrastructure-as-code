@@ -24,7 +24,7 @@ spec:
             - name: ALLOW_SIGNUP
               value: "false"
             - name: BASE_URL
-              value: "https://recept.dnsk.xyz"
+              value: "https://recept.${SECRET_EXTERNAL_DOMAIN}"
           image: ghcr.io/mealie-recipes/mealie:v2.8.0
           ports:
             - containerPort: 9000

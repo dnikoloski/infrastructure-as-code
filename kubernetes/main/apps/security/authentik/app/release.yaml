@@ -28,10 +28,10 @@ spec:
       ingress:
         enabled: true
         annotations:
-          external-dns.alpha.kubernetes.io/target: "auth.dnsk.xyz"
+          external-dns.alpha.kubernetes.io/target: "auth.${SECRET_EXTERNAL_DOMAIN}"
         ingressClassName: external
         hosts:
-          - &host "auth.dnsk.xyz"
+          - &host "auth.${SECRET_EXTERNAL_DOMAIN}"
     postgresql:
       enabled: true
       auth:

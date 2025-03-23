@@ -30,7 +30,7 @@ spec:
       allowSnippetAnnotations: true
       service:
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: "external.dnsk.xyz"
+          external-dns.alpha.kubernetes.io/hostname: "external.${SECRET_EXTERNAL_DOMAIN}"
           metallb.universe.tf/allow-shared-ip: ingress-nginx-external
           metallb.universe.tf/ip-allocated-from-pool: pool
         externalTrafficPolicy: Cluster
@@ -73,7 +73,7 @@ spec:
           namespaceSelector:
             any: true
       extraArgs:
-        default-ssl-certificate: "ingress-nginx/dnsk-xyz-production-tls"
+        default-ssl-certificate: "ingress-nginx/${SECRET_EXTERNAL_DOMAIN/./-}-production-tls"
       resources:
         requests:
           cpu: 100m

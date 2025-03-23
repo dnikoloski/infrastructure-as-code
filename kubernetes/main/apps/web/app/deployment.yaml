@@ -17,7 +17,13 @@ spec:
     spec:
       containers:
         - name: web
-          resources: {}
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
           image: registry.gitlab.com/cloudwithdan/web:latest
           imagePullPolicy: Always
           ports:

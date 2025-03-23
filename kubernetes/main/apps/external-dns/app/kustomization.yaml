@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./repository.yaml
-  - ./externalsecret.yaml
+  - ./secret.sops.yaml
 #  - ./dnsendpoint.yaml
   - ./release.yaml
 

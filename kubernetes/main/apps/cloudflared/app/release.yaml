@@ -27,8 +27,8 @@ spec:
     controllers:
       cloudflared:
         strategy: RollingUpdate
-        # annotations:
-        #   reloader.stakater.com/auto: "true"
+        annotations:
+          reloader.stakater.com/auto: "true"
         containers:
           app:
             image:
